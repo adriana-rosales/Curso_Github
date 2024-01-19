@@ -1,0 +1,21 @@
+# obtener lista
+
+#cat covid2.csv | cut -d, -f3 | grep -v nombre | grep -v Nacional
+
+#obtiene acumulado
+
+#grep DURANGO covid2.csv | cut -d, -f1-3 --complement | less | tr "," "+" | bc
+
+#ciclo
+
+for ESTADO in $(cat covid2.csv | cut -d, -f3 | grep -v nombre | grep -v Nacional)
+
+do
+
+echo "$ESTADO $(grep $ESTADO covid2.csv | cut -d, -f1-3 --complement | less | tr "," "+" | bc)"
+
+
+done | sort -k 2 -n
+
+
+
