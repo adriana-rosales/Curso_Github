@@ -1,4 +1,4 @@
-# obtener lista
+# obtener lista original
 
 #cat covid2.csv | cut -d, -f3 | grep -v nombre | grep -v Nacional
 
